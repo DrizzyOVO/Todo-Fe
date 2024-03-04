@@ -35,14 +35,20 @@ const TodoList = () => {
 
     const addTodo = async (event: any) => {
         event.preventDefault(); 
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/todo/todos`, { 
-            title: title, 
-        }, {
-            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
-        const data = response.data;
-        setTodos([...todos, data]);
-        setTitle(""); 
+        setTitle(title.trim()); 
+        if(title !== ""){ 
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/todo/todos`, { 
+                title: title, 
+            }, {
+                headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem("token")}` },
+            });
+            const data = response.data;
+            setTodos([...todos, data]);
+            setTitle(""); 
+        } else {
+            window.alert("No Todo to add"); 
+        }
+        
     };
 
 
