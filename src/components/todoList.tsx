@@ -120,7 +120,7 @@ const TodoList = () => {
                                 <span className="ml-4 text-sm break-words">{todo.title}</span>	
                             </label>
                         </div>
-                        <div className='mr-5'>
+                        <div className='mr-1.5 sm:mr-4'>
                             <button onClick={() => deleteOne(todo._id)}>Delete</button>  
                         </div>
                     </div>
