@@ -57,7 +57,7 @@ function Signup() {
         style={{fontFamily: 'Cookie', fontSize: "20px", color: 'white'}}
         className="block w-full select-none rounded-lg bg-gradient-to-tr from-green-600 to-green-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" 
         onClick={async () => {
-            const res = await axios.post("/auth/signup", {
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, {
                 username: email,
                 password: password
             }, {

@@ -24,7 +24,7 @@ const TodoList = () => {
 
     useEffect(() => {
         const getTodos = async () => {
-            const response = await axios.get('/todo/todos', {
+            const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/todo/todos`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             });
             const data = response.data.todos; 
@@ -34,7 +34,7 @@ const TodoList = () => {
     }, []);
 
     const addTodo = async () => {
-        const response = await axios.post('/todo/todos', { 
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/todo/todos`, { 
             title: title, 
         }, {
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -48,7 +48,7 @@ const TodoList = () => {
 
     const markDone = async (id: String | undefined) => { 
         
-        const response = await axios.patch(`/todo/todos/${id}/done`, { 
+        const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/todo/todos/${id}/done`, { 
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         const updatedTodoo = response.data.updatedTodo; 
@@ -59,7 +59,7 @@ const TodoList = () => {
 
     const deleteOne = async (id: String | undefined) => { 
         
-        const response = await axios.post(`/todo/todos/${id}/delete`, { 
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/todo/todos/${id}/delete`, { 
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         const deleteTodo = response.data.deleteTodo;

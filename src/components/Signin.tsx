@@ -6,6 +6,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import { useSetRecoilState } from 'recoil';
 import { userState } from '../store/atoms/user';
+// const BASE_URL = process.env.BASE_URL; 
 
 function Signin() {
     const navigate = useNavigate(); 
@@ -57,7 +58,7 @@ function Signin() {
         style={{fontFamily: 'Cookie', fontSize: "20px", color: 'white'}}
         className="block w-full select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" 
         onClick={async () => {
-            const res = await axios.post("/auth/login", {
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, {
                 username: email,
                 password: password
             }, {

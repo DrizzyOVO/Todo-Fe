@@ -8,6 +8,7 @@ import axios from "axios";
 import { useSetRecoilState, RecoilRoot } from 'recoil';
 import { userState } from './store/atoms/user';
 import { Landing } from './components/Landing';
+const BASE_URL = process.env.BASE_URL; 
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 function InitUser() { 
     const setUser = useSetRecoilState(userState); 
     const init = async () => {
+        console.log("base url :- " + process.env.REACT_APP_BASE_URL);
         try { 
             const response = await axios.get('/auth/me', {
                 headers: {

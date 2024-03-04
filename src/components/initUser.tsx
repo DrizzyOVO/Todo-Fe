@@ -7,7 +7,7 @@ function initUser() {
     const setUser = useSetRecoilState(userState); 
     const init = async () => {
         try { 
-            const response = await axios.get('/auth/me', {
+            const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/me`, {
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("token")
                 }
