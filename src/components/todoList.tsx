@@ -92,7 +92,7 @@ const TodoList = () => {
 
                 <button 
                     onClick={addTodo}
-                    className='p-1 bg-gray-900 rounded-md px-1'
+                    className='p-1 bg-gray-900 rounded-md px-1 text-xs sm:text-base' 
                 >Add Todo</button>
             </div>
 
