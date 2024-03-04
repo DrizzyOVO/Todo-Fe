@@ -16,10 +16,10 @@ export const Landing = () => {
     } else { 
         return (
             <>
-            <h1 className="flex justify-center font-normal cursor-pointer mt-10 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
+            <h1 className="flex justify-center font-normal cursor-pointer mt-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
                 Welcome to <span className="font-bold">&nbsp;ToDo...</span>
             </h1>
-            <h1 className="flex justify-center font-normal cursor-pointer mt-10 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
+            <h1 className="flex justify-center font-normal cursor-pointer mt-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
                 login or make an account and get <span className="font-bold">&nbsp;started!</span>
             </h1>
             </>
