@@ -42,9 +42,22 @@ const TodoList = () => {
             }, {
                 headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
-            const data = response.data;
-            setTodos([...todos, data]);
-            setTitle(""); 
+
+            if(response){
+                if(response.data.message){
+                    window.alert("Max limit of 10 todos reached:(")
+                } else {
+                    const data = response.data.todos;
+                    setTodos([...todos, data]);
+                    setTitle("");
+                } 
+            } else {
+                window.alert("server maybe down, try again:(")
+            }
+
+            // const data = response.data;
+            // setTodos([...todos, data]);
+            // setTitle(""); 
         } else {
             window.alert("No Todo to add"); 
         }
