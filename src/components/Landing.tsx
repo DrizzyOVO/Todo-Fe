@@ -27,7 +27,7 @@ export const Landing = () => {
                 <h1 className="flex justify-center font-normal cursor-pointer mt-10 text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
                     Limited to <span className="font-bold">&nbsp;35</span>&nbsp;users.
                 </h1>
-                <h1 className="flex justify-center font-normal cursor-pointer mt-10 text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
+                <h1 className="flex justify-center font-normal cursor-pointer text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl" style={{fontFamily: 'Cookie', color: 'white'}}> 
                     Once limit is reached you may need to signup once again.
                 </h1>
             </div>
